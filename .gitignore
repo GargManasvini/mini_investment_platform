@@ -1,0 +1,21 @@
+# Node.js dependencies
+/backend/node_modules
+/frontend/node_modules
+
+# Environment variables (contains secrets)
+.env
+backend/.env
+frontend/.env*
+
+# Build output
+/frontend/dist
+
+# IDE and OS files
+.vscode
+.DS_Store
+
+# Logs
+npm-debug.log*
+
+# Local database data (CRITICAL)
+/mysql_data

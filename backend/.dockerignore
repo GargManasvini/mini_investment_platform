@@ -1,0 +1,14 @@
+# Ignore local dependencies
+node_modules
+
+# Ignore environment files containing secrets
+.env
+
+# Ignore logs
+npm-debug.log
+
+# Ignore test files
+__tests__
+
+# Ignore local database data
+mysql_data
