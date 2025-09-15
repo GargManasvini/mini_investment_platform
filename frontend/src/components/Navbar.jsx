@@ -1,4 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import Logo from './Logo.jsx'; // <-- FIX: Added .jsx extension for clarity
 
 export default function Navbar({ isAuthenticated, onLogout }) {
   const navigate = useNavigate();
@@ -17,8 +18,9 @@ export default function Navbar({ isAuthenticated, onLogout }) {
         <div className="flex items-center justify-between h-16">
           {/* Left Side: Brand and Main Navigation */}
           <div className="flex items-center">
-            <NavLink to={isAuthenticated ? "/dashboard" : "/login"} className="text-xl font-bold text-indigo-600">
-              InvestApp
+            {/* --- UPDATED: Use the Logo component --- */}
+            <NavLink to={isAuthenticated ? "/dashboard" : "/login"}>
+              <Logo />
             </NavLink>
             {isAuthenticated && (
               <div className="hidden md:block">
