@@ -36,16 +36,24 @@ The entire application stack (frontend, backend, database) is containerized and 
 
 1.  **Clone the repository:**
     
-        git clone [https://github.com/GargManasvini/gripinvest_winter_internship_backend.git]
-        cd GripInvest
+        git clone https://github.com/GargManasvini/gripinvest_winter_internship_backend.git
+        cd griptinvest_winter_internship_backend
         
     
-2.  **Run Docker Compose:** From the root directory of the project, run the following command. This will build the images and start all the services.
+2.   **Configure Your Environment:** This project uses an `.env` file to manage secret keys and configuration. An example template is provided.
+    
+        # Create your own environment file by copying the example
+        cp .env.example .env
+        
+    
+    After creating the file, open the new `.env` file and fill in your local values (like a database password and a JWT secret).
+    
+3.   **Run Docker Compose:** From the root directory of the project, run the following command. This will build the images and start all the services.
     
         docker-compose up --build
         
     
-3.  **Access the Application:**
+4.  **Access the Application:**
     
     *   **Frontend**: Open your browser and navigate to `http://localhost:5173`
         
