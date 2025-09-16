@@ -4,11 +4,9 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files and install production dependencies only
 COPY package*.json ./
 RUN npm ci --only=production
 
-# Copy the rest of the application source code
 COPY . .
 
 # --- Stage 2: The Final "Runner" ---
@@ -17,14 +15,20 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy the installed node_modules from the "builder" stage
 COPY --from=builder /app/node_modules ./node_modules
-
-# Copy the application code from the "builder" stage
 COPY --from=builder /app ./
 
-# Expose the port the app runs on
+# --- NEW: Set up the entrypoint script ---
+# Copy the entrypoint script into the image
+COPY docker-entrypoint.sh /usr/local/bin/
+# Make the script executable
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 EXPOSE 5000
 
-# The command to start the application in production
+# Set the entrypoint script to be the first thing that runs
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+# The default command to run *after* the entrypoint script finishes
 CMD ["npm", "start"]
+
