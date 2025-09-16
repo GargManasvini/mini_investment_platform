@@ -40,15 +40,18 @@ The entire application stack (frontend, backend, database) is containerized and 
         cd griptinvest_winter_internship_backend
         
     
-2.   **Configure Your Environment:** This project uses an `.env` file to manage secret keys and configuration. An example template is provided.
-    
+2. **Configure Your Environment** :
+This project uses an .env file to manage secret keys and configuration. An example template is provided. After creating the file, open the new .env file and fill in your local values (like a database password and a JWT secret).
+
         # Create your own environment file by copying the example
         cp .env.example .env
+
+
         
     
-    After creating the file, open the new `.env` file and fill in your local values (like a database password and a JWT secret).
-    
-3.   **Run Docker Compose:** From the root directory of the project, run the following command. This will build the images and start all the services.
+3.  **Run Docker Compose:** From the root directory of the project, run the following command. This will build the images and start all the services.
+
+
     
         docker-compose up --build
         
