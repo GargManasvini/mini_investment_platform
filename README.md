@@ -37,7 +37,7 @@ The entire application stack (frontend, backend, database) is containerized and 
 1.  **Clone the repository:**
     
         git clone https://github.com/GargManasvini/gripinvest_winter_internship_backend.git
-        cd griptinvest_winter_internship_backend
+        cd gripinvest_winter_internship_backend
         
     
 2. **Configure Your Environment** :
