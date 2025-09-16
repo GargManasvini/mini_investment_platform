@@ -17,7 +17,7 @@ services:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$$MYSQL_ROOT_PASSWORD"]
       interval: 10s
       timeout: 10s
-      retries: 5
+      retries: 15
 
   # --- Backend API Service ---
   backend:

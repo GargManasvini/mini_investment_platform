@@ -42,8 +42,9 @@ The entire application stack (frontend, backend, database) is containerized and 
     
 2. **Configure Your Environment** :
 This project uses an .env file to manage secret keys and configuration. An example template is provided. After creating the file, open the new .env file and fill in your local values (like a database password and a JWT secret).
+#### Create your own environment file by copying the example
 
-        # Create your own environment file by copying the example
+        
         cp .env.example .env
 
 
