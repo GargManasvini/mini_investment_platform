@@ -4,15 +4,17 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      # These values are now read from your local .env file
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}
     volumes:
       - ./mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
+    # --- UPDATED: Authenticated Health Check ---
+    # This now tells the health check to use the root password, which will
+    # allow it to succeed once the database is fully initialized.
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$${MYSQL_ROOT_PASSWORD}"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$$MYSQL_ROOT_PASSWORD"]
       interval: 10s
       timeout: 10s
       retries: 5
@@ -25,7 +27,6 @@ services:
     environment:
       - DB_HOST=mysql_db
       - DB_PORT=3306
-      # These values are also read from your local .env file
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_NAME=${DB_DATABASE}
@@ -42,4 +43,6 @@ services:
       - "5173:80"
     depends_on:
       - backend
+
+    
 
