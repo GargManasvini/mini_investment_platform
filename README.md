@@ -1,8 +1,8 @@
-# Mini Investment Platform - Grip Invest Winter Internship
+# Mini Investment Platform
 
 ## 
 
-This repository contains the full-stack project for the Grip Invest Winter Internship selection process. It is a mini investment platform featuring a secure backend API, a modern React frontend, and a fully containerized deployment setup with Docker.
+ It is a mini investment platform featuring a secure backend API, a modern React frontend, and a fully containerized deployment setup with Docker.
 
 > **For detailed information about features, API endpoints, AI usage and other details please see the** [**full technical documentation**](./DOCUMENTATION.md "null")**.**
 
